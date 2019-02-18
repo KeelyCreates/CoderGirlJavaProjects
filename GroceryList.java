@@ -8,11 +8,10 @@ public class GroceryList {
     // Now, please enter the price of each item.
     // Calculating your grocery bill
     public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-// be care naming variables, they have to be consistent to link the code
-        String List;
-        out.print("List 3 items on your grocery list:");
-        List = keyboard.nextLine();
+               Scanner keyboard = new Scanner(System.in);
+
+//Grocery list
+        out.println("List 3 items on your grocery list:");
 
         String itemA;
         out.print("Item 1: ");
@@ -26,10 +25,8 @@ public class GroceryList {
         out.print("Item 3: ");
         itemC = keyboard.nextLine();
 
-//no touchie all this workie
-        String groceryCount;
-        out.print("How many of each item do you need?");
-        groceryCount = keyboard.nextLine();
+//how many of each item
+        out.println("How many of each item do you need?");
 
         int firstCount;
         out.print("How many " +itemA+": ");
@@ -42,38 +39,26 @@ public class GroceryList {
         int thirdCount;
         out.print("How many " +itemC+": ");
         thirdCount = keyboard.nextInt();
-/*
-HOLY SHIT SO FAR IT"S WORKING
 
-Grocery List stops here
+// How much does each item cost?
 
-String groceryCost;
-out.print("How much does each item cost?");
-groceryCost = keyboard.nextLine();
-*/
-
-        int firstCostInCents;
+        float firstCostInCents;
         out.print("What does " +itemA+ " cost? ");
-        firstCostInCents = keyboard.nextInt();
+        firstCostInCents = keyboard.nextFloat();
 
-        int secondCostInCents;
+        float secondCostInCents;
         out.print("What does " +itemB+ " cost? ");
-        secondCostInCents = keyboard.nextInt();
+        secondCostInCents = keyboard.nextFloat();
 
-        int thirdCostInCents;
+        float thirdCostInCents;
         out.print("What does " +itemC+ " cost? ");
-        thirdCostInCents = keyboard.nextInt();
+        thirdCostInCents = keyboard.nextFloat();
 
-        String finalTotal;
-        out.print("Final Total of Grocery List");
-        finalTotal = keyboard.nextLine();
+        out.println("Final Total of Grocery List");
 
-        int priceInCents = (firstCount * firstCostInCents) + (secondCount * secondCostInCents) + (thirdCount * thirdCostInCents);
+        float priceInCents = (firstCount * firstCostInCents) + (secondCount * secondCostInCents) + (thirdCount * thirdCostInCents);
         float priceInDollars = priceInCents/100f;
         out.print("Your Total Cost Is "+priceInDollars);
 //don't delete anything past this comment
-        }
     }
-//        //int itemCount;
-//       // out.println("How Many? ");
-//      //  itemCount = keyboard.nextInt();
+}
