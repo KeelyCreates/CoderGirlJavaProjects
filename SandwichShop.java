@@ -11,17 +11,14 @@ public class SandwichShop {
         int goalForSubs = 180;
         int goalForSoup = 70;
 
-        String Shop;
         out.print("Checking sales goals:");
-        Shop = keyboard.nextLine();
+        keyboard.skip("\n");
 
-        String Veggies;
-        out.print("Sales goal for veggies sandwhiches is " + goalForVeggies);
-        Veggies = keyboard.nextLine();
-
+        out.println("Sales goal for veggies sandwhiches is " + goalForVeggies);
         int veggiesCount;
-        out.print("How many veggie sandwhiches were sold today?");
+        out.println("How many veggie sandwhiches were sold today?");
         veggiesCount = keyboard.nextInt();
+        keyboard.skip("\n");
 
         if (veggiesCount < 50) {
             out.println("Fell short");
@@ -29,13 +26,12 @@ public class SandwichShop {
         if (veggiesCount >= 50)  {
             out.println("Meets goal!");
         }
-        String burgers;
-        out.println("Sales goal for burgers is " + goalForBurgers);
-        burgers = keyboard.nextLine();
 
+        out.println("Sales goal for burgers is " + goalForBurgers);
         int burgersCount;
         out.print("How many burgers were sold today? ");
         burgersCount = keyboard.nextInt();
+        keyboard.skip("\n");
 
         if (burgersCount < 250) {
             out.println("Fell short");
@@ -43,36 +39,34 @@ public class SandwichShop {
         if (burgersCount >= 250) {
             out.println("Meets goal!");
         }
-        String subs;
-        out.println("Sales goal for subs is " + goalForSubs);
-        subs = keyboard.nextLine();
 
+        out.println("Sales goal for subs is " + goalForSubs);
         int subsCount;
         out.print("How many subs were sold today? ");
         subsCount = keyboard.nextInt();
+        keyboard.skip("\n");
 
         if (subsCount < 180) {
             out.println("Fell short");
         }
         if (subsCount >= 180) {
-            out.println("Meets goal!");
-            String soup;
-            out.println("Sales goal for soup is " + goalForSoup);
-            soup = keyboard.nextLine();
-
-            int soupCount;
-            out.print("How many soups were sold today? ");
-            soupCount = keyboard.nextInt();
-
-            if (soupCount < 70) {
-                out.println("Fell short");
-            }
-            if (veggiesCount >= 70) {
-                out.println("Meets goal!");
-            }
-            if (veggiesCount >= 50 && burgersCount >= 250 && subsCount >= 180 && soupCount >= 70) {
-                out.print("Made goal for everything!");
-            }
+        out.println("Meets goal!");
         }
+
+        out.println("Sales goal for soup is " + goalForSoup);
+        int soupCount;
+        out.print("How many soups were sold today? ");
+        soupCount = keyboard.nextInt();
+        keyboard.skip("\n");
+
+        if (soupCount < 70) {
+            out.println("Fell short");
+        }
+        if (soupCount >= 70) {
+            out.println("Meets goal!");
+        }
+        if (veggiesCount >= 50 && burgersCount >= 250 && subsCount >= 180 && soupCount >= 70) {
+            out.print("Made goal for everything!");
+            }
     }
 }
