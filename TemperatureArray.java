@@ -12,10 +12,15 @@ public class TemperatureArray {
     System.out.println("Temperature Chart and Averages" );
     System.out.println("The data provided are: ");
 
-       for (int a= 0; a < 4; a++) {
-           for (int b = 0; b < 7; b++) {
-               System.out.print(temps[a][b] + " ");
-           }
+
+        for (int c = 0; c < 4; c++) {
+            String times[] = {"7 AM: ", "3 PM: ", "7 PM: ", "3 AM: "};
+            System.out.print(times[c]);
+            for (int a= 0; a < 4; a++) {
+                for (int b = 0; b < 7; b++) {
+                    System.out.print(temps[a][b] + " ");
+                }
+               }
            System.out.println();
 
        }System.out.println();
@@ -29,26 +34,37 @@ public class TemperatureArray {
 
     public static int dailyAvg (int[][] temps) {
         //calculate daily average here
-        for (int b = 0; b < 7; b++) {
-            int sum = 0;
-            int a = 0;
-            while (a < temps.length){
-                sum += temps[a++][b];  //this isolates the loop to just run the columns/days
+        //make days a string array
+        String weekDays [] = {"Sun: ", "Mon: ", "Tues: ", "Weds", "Thur: ", "Fri: ", "Sat: "};
+        for (int c = 0; c < 7; c++);{
+            int c = 0;
+            System.out.print(weekDays[c]);
+            for (int b = 0; b < 7; b++) {
+                int sum = 0;
+                int a = 0;
+                while (a < temps.length) {
+                    sum += temps[a++][b];  //this isolates the loop to just run the columns/days
             }
-        int avg = sum/temps.length;
-        System.out.println("Daily avg: " + avg);
+            int avg = sum / temps.length;
+            System.out.println(avg);
+        }
         }System.out.println();
         return 0;
     }
 
     public static int hourAvg (int[][] temps){
-        for (int a = 0; a < 4; a++) {
+        String hour [] = {"7 AM: ", "3 PM: ", "7 PM: ", "3 AM: "};
+        for (int c = 0; c < 7; c++){
+            System.out.print(hour[c]); //has for loop through each time and...
+            {
             int sum = 0;
             int b = 0;
             while (b < temps.length) {
-                sum += temps[a][b++]; //this isolates the loop to just run the rows/hours
-            }int avg = sum / temps.length;
-            System.out.println("Hour: " + avg);
+                sum += temps[c][b++]; //this isolates the loop to just run the rows/hours
+            }
+            int avg = sum / temps.length;
+            System.out.println(avg); //...then print the average next to the corresponding time
+            }
         }System.out.println();
         return 0;
     }
